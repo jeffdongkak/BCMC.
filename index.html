@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BLESSED CHRISTIAN MISSION CHURCH</title>
+  <title>BLESSED CHRISTIAN MISSION CHURCH - Admin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -18,9 +18,9 @@
       --shadow: 0 12px 40px rgba(42,31,24,.12);
       --accent:#7a4a2a;
       --accent3:#4d2a18;
+      --radius:18px;
       --bad:#b42318;
       --warn:#a16207;
-      --radius:18px;
 
       --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       --sans: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -37,8 +37,6 @@
         linear-gradient(180deg, var(--bg), var(--bg2));
       overflow-x:hidden;
     }
-
-    a{ color:inherit; }
 
     .nav{
       position:sticky;
@@ -58,48 +56,23 @@
       gap:14px;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 260px;
-    }
-
+    .brand{ display:flex; align-items:center; gap:12px; min-width:260px; }
     .logo{
-      width:44px;
-      height:44px;
-      border-radius: 14px;
+      width:44px; height:44px; border-radius:14px;
       background: rgba(255,255,255,.65);
       border: 1px solid rgba(42,31,24,.16);
       box-shadow: 0 10px 22px rgba(122,74,42,.20);
-      display:grid;
-      place-items:center;
-      overflow:hidden;
+      display:grid; place-items:center; overflow:hidden;
     }
     .logo svg{ width:34px; height:34px; display:block; }
 
     .brand h1{
-      font-size: 14px;
-      margin:0;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      line-height:1.2;
+      font-size: 14px; margin:0; letter-spacing:.08em; text-transform:uppercase; line-height:1.2;
       white-space:nowrap;
     }
-    .brand .tag{
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
+    .brand .tag{ font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
+    .container{ max-width:1120px; margin:0 auto; padding:22px 18px 80px; }
 
     .chip{
       border: 1px solid var(--line);
@@ -108,30 +81,11 @@
       border-radius: 999px;
       font-size: 13px;
       cursor:pointer;
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
       user-select:none;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
     }
     .chip:hover{ transform: translateY(-1px); border-color: rgba(122,74,42,.35); }
-    .chip.active{
-      background: rgba(122,74,42,.10);
-      border-color: rgba(122,74,42,.35);
-      font-weight: 700;
-    }
-
-    .container{
-      max-width: 1120px;
-      margin:0 auto;
-      padding: 22px 18px 60px;
-    }
-
-    .hero{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:stretch;
-      margin-top: 8px;
-    }
-    @media (max-width: 900px){ .hero{ grid-template-columns: 1fr; } .brand{ min-width:auto; } }
+    .chip.active{ background: rgba(122,74,42,.10); border-color: rgba(122,74,42,.35); font-weight:800; }
 
     .card{
       background: var(--card);
@@ -141,98 +95,45 @@
       overflow:hidden;
     }
 
-    .hero-main{
-      padding: 22px;
-      position:relative;
+    .section-header{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin: 6px 4px 12px;
     }
-    .hero-main::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(520px 220px at 25% -10%, rgba(122,74,42,.18), transparent 60%),
-        radial-gradient(420px 220px at 100% 40%, rgba(192,138,90,.22), transparent 60%);
-      pointer-events:none;
-    }
-    .hero-main > *{ position:relative; }
-
-    .kicker{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom: 10px; }
-    .badge{
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 8px 10px;
-      border: 1px solid rgba(122,74,42,.25);
-      color: #4d2a18;
-      background: rgba(122,74,42,.07);
-      border-radius: 999px;
-      letter-spacing:.02em;
-    }
-
-    .title{ margin: 0; font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.05; }
-    .subtitle{ margin: 10px 0 0; color: var(--muted); font-size: 15px; line-height: 1.6; max-width: 64ch; }
-
-    .hero-actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 16px; }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.7);
-      cursor:pointer;
-      user-select:none;
-      transition: transform .12s ease, border-color .12s ease;
-      font-weight: 700;
-      font-size: 14px;
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(122,74,42,.35); }
-    .btn.primary{ background: linear-gradient(180deg, rgba(122,74,42,.12), rgba(122,74,42,.06)); border-color: rgba(122,74,42,.35); }
-
-    .hero-side{ padding: 18px; display:flex; flex-direction:column; gap:12px; }
-    .stat{ padding: 14px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(243,234,220,.60)); }
-    .stat .label{ font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing:.06em; text-transform:uppercase; }
-    .stat .value{ margin-top: 6px; font-size: 20px; font-weight: 800; letter-spacing:-.01em; }
-
-    .section{ margin-top: 18px; }
-    .section-header{ display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin: 6px 4px 12px; }
-    .section-header h2{ margin:0; font-size: 18px; text-transform: uppercase; letter-spacing:.08em; }
-    .section-header p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+    .section-header h2{ margin:0; font-size:18px; text-transform:uppercase; letter-spacing:.08em; }
+    .section-header p{ margin:0; color:var(--muted); font-size:13px; line-height:1.4; }
 
     .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
     @media (max-width: 900px){ .grid-2{ grid-template-columns: 1fr; } }
 
-    .form{ padding: 16px; }
-    .form-row{ display:grid; gap:10px; margin-top: 10px; }
+    .form{ padding:16px; }
+    .form-row{ display:grid; gap:10px; margin-top:10px; }
     .form-row.two{ grid-template-columns: 1fr 1fr; }
-    @media (max-width: 720px){ .form-row.two{ grid-template-columns: 1fr; } }
+    @media (max-width:720px){ .form-row.two{ grid-template-columns: 1fr; } }
 
-    label{
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--muted);
-      display:block;
-      margin-bottom: 6px;
-    }
-    input[type="text"], input[type="number"], textarea, select{
-      width:100%;
-      padding: 11px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.9);
-      outline:none;
-      font-family: inherit;
-      font-size: 14px;
+    label{ font-size:13px; font-weight:800; color:var(--muted); display:block; margin-bottom:6px; }
+
+    input[type="text"], textarea, select{
+      width:100%; padding:11px 12px; border-radius:14px; border:1px solid var(--line);
+      background: rgba(255,255,255,.9); outline:none; font-family: inherit; font-size:14px;
     }
     textarea{ min-height: 120px; resize: vertical; }
-    input[type="text"]::placeholder, textarea::placeholder{ color: rgba(42,31,24,.35); }
 
-    .help{ margin-top: 8px; font-size: 12.5px; color: var(--muted); line-height: 1.45; }
-    .hr{ height:1px; background: var(--line); margin: 14px 0; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 11px 14px; border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+      cursor:pointer; user-select:none;
+      transition: transform .12s ease, border-color .12s ease;
+      font-weight:900; font-size:14px;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(122,74,42,.35); }
+    .btn.primary{ background: linear-gradient(180deg, rgba(122,74,42,.14), rgba(122,74,42,.06)); border-color: rgba(122,74,42,.35); }
+    .btn.danger{ border-color: rgba(180,35,24,.35); background: rgba(180,35,24,.06); }
 
-    .list{ padding: 14px; }
+    .help{ margin-top: 8px; font-size: 12.5px; color: var(--muted); line-height:1.45; }
+
+    .list{ padding:14px; }
     .item{
       padding: 12px;
       border: 1px solid var(--line);
@@ -243,13 +144,10 @@
       justify-content:space-between;
       gap:12px;
     }
-    .item + .item{ margin-top: 10px; }
-
+    .item + .item{ margin-top:10px; }
     .item .meta{ display:flex; flex-direction:column; gap:6px; min-width:0; }
-    .item .name{ font-weight: 900; letter-spacing: -.01em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width: 46ch; }
-    .item .sub{ color: var(--muted); font-size: 13px; line-height:1.3; }
-
-    .item .actions{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .item .name{ font-weight:900; letter-spacing:-.01em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:46ch; }
+    .item .sub{ color: var(--muted); font-size:13px; line-height:1.3; }
 
     .mini-btn{
       border-radius: 12px;
@@ -257,117 +155,32 @@
       background: rgba(255,255,255,.9);
       padding: 9px 10px;
       cursor:pointer;
-      font-weight: 800;
-      font-size: 13px;
+      font-weight:900;
+      font-size:13px;
       transition: transform .12s ease, border-color .12s ease;
     }
     .mini-btn:hover{ transform: translateY(-1px); border-color: rgba(122,74,42,.35); }
-    .mini-btn.danger{ border-color: rgba(180,35,24,.35); }
-    .mini-btn.danger:hover{ border-color: rgba(180,35,24,.55); }
+    .mini-btn.danger{ border-color: rgba(180,35,24,.35); background: rgba(180,35,24,.06); }
+    .mini-btn.danger:hover{ border-color: rgba(180,35,24,.6); }
 
-    .footer-note{
-      text-align:center;
-      color: rgba(42,31,24,.58);
-      font-size: 12.5px;
-      margin-top: 26px;
-      font-family: var(--mono);
-    }
-
-    .searchbar{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-    .pill-row{ display:flex; flex-wrap:wrap; gap:8px; }
-    .small-text{ font-size: 13px; color: var(--muted); line-height:1.4; }
-
-    /* Slide mode overlay */
     .overlay{
-      position:fixed;
-      inset:0;
-      background: rgba(20,12,8,.72);
-      display:none;
-      z-index:200;
-      align-items:center;
-      justify-content:center;
-      padding: 18px;
+      position:fixed; inset:0; background: rgba(20,12,8,.72);
+      display:none; z-index:200;
+      align-items:center; justify-content:center;
+      padding:18px;
     }
     .overlay.open{ display:flex; }
+    .overlay-dialog{ width:min(520px,100%); background:#fff; border-radius:22px; border:1px solid rgba(255,255,255,.35); box-shadow:0 30px 90px rgba(0,0,0,.35); }
 
-    .overlay-dialog{
-      width: min(980px, 100%);
-      background: #fff;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.35);
-      box-shadow: 0 30px 90px rgba(0,0,0,.35);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      max-height: 92vh;
-    }
-
-    .overlay-top{
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      background: linear-gradient(180deg, rgba(122,74,42,.09), rgba(255,255,255,1));
-    }
-    .overlay-top .song-title{ font-weight: 900; letter-spacing:-.01em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width: 62ch; }
-    .overlay-top .sub{ color: var(--muted); font-size: 12.5px; margin-top: 4px; }
-
-    .overlay-controls{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
-
-    .overlay-body{ padding: 18px; overflow:auto; }
-
-    .slide{
-      background: rgba(243,234,220,.55);
-      border: 1px solid rgba(122,74,42,.22);
-      border-radius: 18px;
-      padding: 18px;
-    }
-
-    .slide .lyrics{
-      font-size: clamp(22px, 3.2vw, 40px);
-      line-height: 1.18;
-      font-weight: 800;
-      letter-spacing:-.01em;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    .chords{
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px dashed rgba(122,74,42,.35);
-      color: rgba(42,31,24,.82);
-      font-family: var(--mono);
-      font-weight: 600;
-      font-size: 13.5px;
-      line-height:1.45;
-      white-space: pre-wrap;
-      display:none;
-    }
-    .chords.show{ display:block; }
-
-    .overlay-footer{
-      padding: 12px 16px;
-      border-top: 1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      background: rgba(122,74,42,.06);
-    }
-
-    .progress{ font-family: var(--mono); color: var(--muted); font-size: 12.5px; }
+    .muted{ color: var(--muted); font-family: var(--mono); font-size: 13px; }
+    .mono{ font-family: var(--mono); }
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <div class="brand" aria-label="Site brand">
+      <div class="brand">
         <div class="logo" aria-hidden="true">
-          <!-- Custom inline SVG logo (not text-based) -->
           <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Church logo">
             <defs>
               <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
@@ -390,358 +203,274 @@
           <div class="tag">Developer: JEFF</div>
         </div>
       </div>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <div class="chip active" data-view="home">Home</div>
-        <div class="chip" data-view="songs">Songs</div>
-        <div class="chip" data-view="worship">Worship Set</div>
-        <div class="chip" data-view="announcements">Announcements</div>
-        <div class="chip" data-view="updates">Updates</div>
-      </nav>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="chip" href="/BLESSED_CHRISTIAN_MISSION_CHURCH_PUBLISHED/index.html">Public Site</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- HOME -->
-    <section id="view-home" class="view" aria-label="Home">
-      <div class="hero">
-        <div class="card hero-main">
-          <div class="kicker">
-            <div class="badge">WEB DEVELOPER:JEFF</div>
-            <div class="badge">BCMC GLOBAL MINISTRY</div>
-          </div>
-
-          <h2 class="title">BLESSED CHRISTIAN MISSION CHURCH</h2>
-          <p class="subtitle">WELCOME TO BCMC FAMILY!</p>
-
-          <div class="hero-actions">
-            <div class="btn primary" data-go="songs">🎵 Open Songs</div>
-            <div class="btn" data-go="worship">📖 Build Worship Set</div>
-            <div class="btn" data-go="announcements">📣 Announcements</div>
-            <div class="btn" data-go="updates">📰 Updates</div>
-          </div>
-
-          <div class="hr"></div>
-
-          <div class="grid-2">
-            <div>
-              <div class="small-text"><b>PowerPoint-style Slide Mode</b></div>
-              <div class="help">Open a song → Slide Mode → choose lines per slide → Next/Prev for projector lyrics.</div>
-            </div>
-            <div>
-              <div class="small-text"><b>Updates & Announcements</b></div>
-              <div class="help">Edit content on the admin page. Stored locally in the browser for this site.</div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="card hero-side">
-          <div class="stat"><div class="label">Songs in Library</div><div class="value" id="kpi-song-count">0</div></div>
-          <div class="stat"><div class="label">Upcoming Announcements</div><div class="value" id="kpi-ann-count">0</div></div>
-          <div class="stat"><div class="label">Latest Updates</div><div class="value" id="kpi-upd-count">0</div></div>
-          <div class="stat"><div class="label">Worship Set Items</div><div class="value" id="kpi-worship-count">0</div></div>
-        </aside>
-      </div>
-
-      <div class="section">
-        <div class="section-header">
-          <div>
-            <h2>Recent Announcements</h2>
-            <p>Most recent entries.</p>
-          </div>
-          <div class="pill-row">
-            <div class="chip" style="padding:8px 12px;" data-go="announcements">View All →</div>
-          </div>
-        </div>
-        <div class="card list" id="recent-announcements"></div>
-      </div>
-
-      <div class="section">
-        <div class="section-header">
-          <div>
-            <h2>Latest Updates</h2>
-            <p>Weekly/monthly news.</p>
-          </div>
-          <div class="pill-row">
-            <div class="chip" style="padding:8px 12px;" data-go="updates">View All →</div>
-          </div>
-        </div>
-        <div class="card list" id="recent-updates"></div>
-      </div>
-
-          <div class="footer-note">© <span id="year"></span> BLESSED CHRISTIAN MISSION CHURCH • Developer: JEFF • <a href="/admin/index.html" style="text-decoration:underline;">Admin Panel</a></div>
-    </section>
-
-
-    <!-- SONGS -->
-    <section id="view-songs" class="view" style="display:none" aria-label="Songs">
-      <div class="section-header">
-        <div>
-          <h2>Songs Library</h2>
-          <p>Add songs (admin recommended) and open Slide Mode.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <div style="padding:16px; border-bottom: 1px solid var(--line);">
-            <div class="searchbar">
-              <div style="flex:1; min-width: 220px;">
-                <label for="song-search">Search</label>
-                <input id="song-search" type="text" placeholder="Search by title or category..." />
-              </div>
-              <div style="min-width: 190px;">
-                <label for="song-filter">Filter</label>
-                <select id="song-filter"><option value="all">All categories</option></select>
-              </div>
-            </div>
-          </div>
-          <div class="list" id="songs-list"></div>
-        </div>
-
-        <div class="card">
-          <div style="padding:16px; border-bottom: 1px solid var(--line);">
-            <div class="section-header" style="margin:0; align-items:flex-start;">
-              <div>
-                <h2 style="font-size:16px;">Quick Actions</h2>
-                <p>Manage content from Admin.</p>
-              </div>
-              <div class="pill-row"><div class="chip" style="padding:8px 12px;" onclick="location.href='/admin/index.html'">Open Admin →</div></div>
-            </div>
-          </div>
-          <div style="padding:16px;">
-            <div class="help"><b>Slide Mode:</b> click a song row to open lyrics for projector display.</div>
-            <div class="help">Lines per slide + fullscreen are inside Slide Mode.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORSHIP -->
-    <section id="view-worship" class="view" style="display:none" aria-label="Worship Set">
-      <div class="section-header">
-        <div>
-          <h2>Worship Set Builder</h2>
-          <p>Order your service with your song library.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <div style="padding:16px; border-bottom: 1px solid var(--line);">
-            <div class="section-header" style="margin:0; align-items:flex-end;">
-              <div>
-                <h2 style="font-size:16px;">Set Controls</h2>
-                <p>Manage songs & set from Admin.</p>
-              </div>
-            </div>
-          </div>
-          <div style="padding:16px;">
-            <div class="help">Start Slide Mode for the first song in your worship set.</div>
-            <div class="hero-actions" style="margin-top: 14px;">
-              <div class="btn primary" id="btn-worship-start">▶ Start Slide Mode</div>
-            </div>
-            <div class="help" style="margin-top:10px;">Or open Admin to edit the set order.</div>
-            <div class="hero-actions" style="margin-top: 10px;">
-              <div class="btn" onclick="location.href='/admin/index.html'">Admin Panel</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div style="padding:16px; border-bottom: 1px solid var(--line);">
-            <div style="font-weight:900; text-transform:uppercase; letter-spacing:.06em; font-size:14px; color:var(--muted);">Current Worship Set</div>
-            <div class="help" style="margin-top:6px;">Click an item to open Slide Mode.</div>
-          </div>
-          <div class="list" id="worship-list"></div>
-        </div>
-      </div>
-
-      <div class="footer-note">For projector: use fullscreen inside Slide Mode.</div>
-    </section>
-
-    <!-- ANNOUNCEMENTS -->
-    <section id="view-announcements" class="view" style="display:none" aria-label="Announcements">
-      <div class="section-header">
-        <div>
-          <h2>Announcements</h2>
-          <p>Saved for this church service.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <div style="padding:16px; border-bottom: 1px solid var(--line);">
-            <div class="searchbar">
-              <div style="flex:1; min-width: 220px;">
-                <label for="ann-search">Search</label>
-                <input id="ann-search" type="text" placeholder="Search announcements..." />
-              </div>
-              <div style="min-width: 190px;">
-                <label for="ann-sort">Sort</label>
-                <select id="ann-sort">
-                  <option value="newest">Newest</option>
-                  <option value="oldest">Oldest</option>
-                  <option value="priority">Priority first</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="list" id="ann-list"></div>
-        </div>
-
-        <div class="card">
-          <div style="padding:16px; border-bottom: 1px solid var(--line);">
-            <div style="font-weight:900; text-transform:uppercase; letter-spacing:.06em; font-size:14px; color:var(--muted);">Admin</div>
-          </div>
-          <div style="padding:16px;">
-            <div class="help">Edit announcements from the Admin panel.</div>
-            <div class="hero-actions" style="margin-top: 14px;">
-              <div class="btn primary" onclick="location.href='/admin/index.html'">Open Admin →</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- UPDATES -->
-    <section id="view-updates" class="view" style="display:none" aria-label="Updates">
-      <div class="section-header">
-        <div>
-          <h2>Updates / News</h2>
-          <p>Lessons, events, and ministry updates.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <div style="padding:16px; border-bottom: 1px solid var(--line);">
-            <div class="searchbar">
-              <div style="flex:1; min-width: 220px;">
-                <label for="upd-search">Search</label>
-                <input id="upd-search" type="text" placeholder="Search updates..." />
-              </div>
-              <div style="min-width: 190px;">
-                <label for="upd-sort">Sort</label>
-                <select id="upd-sort">
-                  <option value="newest">Newest</option>
-                  <option value="oldest">Oldest</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="list" id="upd-list"></div>
-        </div>
-
-        <div class="card">
-          <div style="padding:16px; border-bottom: 1px solid var(--line);">
-            <div style="font-weight:900; text-transform:uppercase; letter-spacing:.06em; font-size:14px; color:var(--muted);">Admin</div>
-          </div>
-          <div style="padding:16px;">
-            <div class="help">Edit updates from the Admin panel.</div>
-            <div class="hero-actions" style="margin-top: 14px;">
-              <div class="btn primary" onclick="location.href='/admin/index.html'">Open Admin →</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Slide Mode Overlay -->
-  <div class="overlay" id="slide-overlay" role="dialog" aria-modal="true" aria-label="Song Slide Mode">
-    <div class="overlay-dialog">
-      <div class="overlay-top">
-        <div class="left" style="min-width:0;">
-          <div class="song-title" id="slide-song-title">Song</div>
-          <div class="sub" id="slide-song-sub">Slide 1 of N</div>
-        </div>
-        <div class="overlay-controls">
-          <div class="mini-btn" id="slide-prev">⟵ Prev</div>
-          <div class="mini-btn" id="slide-next">Next ⟶</div>
-          <div class="mini-btn" id="slide-fullscreen">⛶ Fullscreen</div>
-          <div class="mini-btn danger" id="slide-close">✕ Close</div>
-        </div>
-      </div>
-
-      <div class="overlay-body">
-        <div class="slide">
-          <div style="display:flex; gap:16px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;">
-            <div style="flex:1; min-width: 360px;">
-              <div class="lyrics" id="slide-lyrics">...</div>
-              <div class="chords" id="slide-chords"></div>
-            </div>
-
-            <div style="min-width: 260px;">
-              <div style="font-family: var(--mono); color: var(--muted); font-size: 12.5px; letter-spacing:.06em; text-transform:uppercase;">Display Options</div>
-
-              <div class="form-row" style="margin-top: 10px;">
-                <div>
-                  <label for="slide-lines">Lines per slide</label>
-                  <input id="slide-lines" type="number" min="2" max="12" step="1" value="5" />
-                </div>
-
-                <div style="display:flex; gap:10px; margin-top: 4px; align-items:center;">
-                  <input id="slide-show-chords" type="checkbox" style="width:18px; height:18px;" />
-                  <label for="slide-show-chords" style="margin:0; font-weight:800; color: var(--muted);">Show chords</label>
-                </div>
-
-                <div class="hero-actions" style="margin-top: 12px;">
-                  <div class="btn primary" id="slide-apply" style="padding:10px 12px; border-radius: 14px;">Apply</div>
-                </div>
-
-                <div class="help" style="margin-top: 0;"><b>Tip:</b> for projector, set chords off unless needed.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="overlay-footer">
-        <div class="progress" id="slide-progress">—</div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
-          <div class="mini-btn" id="slide-copy">Copy Lyrics (Current)</div>
-        </div>
+    <div class="section-header">
+      <div>
+        <h2>Admin Panel</h2>
+        <p>Edit songs, worship set, announcements, and updates.</p>
       </div>
     </div>
-  </div>
+
+    <div id="authed" style="display:none;">
+      <div class="grid-2">
+        <section class="card form">
+          <div class="section-header" style="margin:0 0 10px;">
+            <div>
+              <h2 style="font-size:16px;">Editor</h2>
+              <p>Choose a tab.</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+              <div class="chip active" data-tab="songs">Songs</div>
+              <div class="chip" data-tab="worship">Worship Set</div>
+              <div class="chip" data-tab="announcements">Announcements</div>
+              <div class="chip" data-tab="updates">Updates</div>
+            </div>
+          </div>
+
+          <!-- SONGS TAB -->
+          <div id="tab-songs" style="">
+            <div class="form-row two">
+              <div>
+                <label for="song-title">Song Title</label>
+                <input id="song-title" type="text" placeholder="e.g., Praise and Tribes" />
+              </div>
+              <div>
+                <label for="song-category">Category</label>
+                <input id="song-category" type="text" placeholder="Worship / Hymn" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="song-lyrics">Lyrics</label>
+                <textarea id="song-lyrics" placeholder="One line per line. Blank line = next section."></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="song-chords">Chords (optional)</label>
+                <textarea id="song-chords" placeholder="Optional chords text."></textarea>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="song-artist">Artist/Author</label>
+                <input id="song-artist" type="text" placeholder="Traditional / Unknown" />
+              </div>
+              <div>
+                <label for="song-edit-id">Editing</label>
+                <input id="song-edit-id" type="text" disabled style="opacity:.7" />
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; justify-content:flex-end;">
+              <div class="btn primary" id="btn-save-song">Save Song</div>
+              <div class="btn" id="btn-clear-song">Clear</div>
+            </div>
+
+            <div class="help">Lyrics are shown in Slide Mode (projector-friendly).</div>
+          </div>
+
+          <!-- WORSHIP TAB -->
+          <div id="tab-worship" style="display:none;">
+            <div class="form-row two">
+              <div>
+                <label for="worship-song-select">Song</label>
+                <select id="worship-song-select"></select>
+              </div>
+              <div>
+                <label for="worship-position">Order #</label>
+                <input id="worship-position" type="text" placeholder="Auto" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="worship-notes">Notes</label>
+                <input id="worship-notes" type="text" placeholder="Intro, Prayer, Response..." />
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; justify-content:flex-end;">
+              <div class="btn primary" id="btn-worship-add">Add</div>
+              <div class="btn danger" id="btn-worship-clear">Clear Set</div>
+            </div>
+            <div class="help">Your worship set is stored in this browser.</div>
+          </div>
+
+          <!-- ANNOUNCEMENTS TAB -->
+          <div id="tab-announcements" style="display:none;">
+            <div class="form-row two">
+              <div>
+                <label for="ann-title">Title</label>
+                <input id="ann-title" type="text" placeholder="Sunday Service" />
+              </div>
+              <div>
+                <label for="ann-date">Date (optional)</label>
+                <input id="ann-date" type="text" placeholder="YYYY-MM-DD" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="ann-body">Details</label>
+                <textarea id="ann-body" placeholder="Announcement details..."></textarea>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="ann-priority">Priority</label>
+                <select id="ann-priority">
+                  <option value="normal">Normal</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              <div>
+                <label for="ann-edit-id">Editing</label>
+                <input id="ann-edit-id" type="text" disabled style="opacity:.7" />
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; justify-content:flex-end;">
+              <div class="btn primary" id="btn-save-ann">Save</div>
+              <div class="btn" id="btn-clear-ann">Clear</div>
+            </div>
+          </div>
+
+          <!-- UPDATES TAB -->
+          <div id="tab-updates" style="display:none;">
+            <div class="form-row two">
+              <div>
+                <label for="upd-title">Title</label>
+                <input id="upd-title" type="text" placeholder="Midweek Bible Study" />
+              </div>
+              <div>
+                <label for="upd-date">Date (optional)</label>
+                <input id="upd-date" type="text" placeholder="YYYY-MM-DD" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="upd-body">Message</label>
+                <textarea id="upd-body" placeholder="Write the update..."></textarea>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="upd-topic">Topic (optional)</label>
+                <input id="upd-topic" type="text" placeholder="Youth / Worship / Teaching" />
+              </div>
+              <div>
+                <label for="upd-edit-id">Editing</label>
+                <input id="upd-edit-id" type="text" disabled style="opacity:.7" />
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; justify-content:flex-end;">
+              <div class="btn primary" id="btn-save-upd">Save</div>
+              <div class="btn" id="btn-clear-upd">Clear</div>
+            </div>
+          </div>
+
+          <div class="help" style="margin-top: 12px;">
+            Tip: Use Export/Import from backup for copying content.
+          </div>
+        </section>
+
+        <section class="card" style="padding:0;">
+          <div style="padding:16px; border-bottom:1px solid var(--line); display:flex; align-items:flex-end; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="font-family:var(--mono); font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em;">Backup / Restore</div>
+              <div style="font-weight:900;">Export / Import JSON</div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
+              <div class="btn" id="btn-export">Export Data</div>
+              <div class="btn primary" id="btn-import">Import Data</div>
+              <div class="btn danger" id="btn-wipe">Wipe This Data</div>
+            </div>
+          </div>
+
+          <div class="form" style="padding-top: 14px;">
+            <label for="backup-text">Export / Import JSON</label>
+            <textarea id="backup-text" style="min-height:140px;" placeholder="Click Export Data to fill this box..."></textarea>
+            <div class="help">Wipe removes data stored in this browser (localStorage).</div>
+          </div>
+
+          <div id="list-area" style="padding:14px; border-top:1px solid var(--line);">
+            <div id="songs-list"></div>
+            <div id="worship-list" style="display:none;"></div>
+            <div id="ann-list" style="display:none;"></div>
+            <div id="upd-list" style="display:none;"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="help" style="margin-top: 14px;">
+        Slide Mode is on the public page: <span class="mono">/index.html</span>
+      </div>
+    </div>
+
+    <div id="login" class="grid-2" style="margin-top: 16px;">
+      <section class="card form">
+        <div class="section-header" style="margin:0 0 10px;">
+          <div>
+            <h2 style="font-size:16px;">Access</h2>
+            <p>Admin PIN required.</p>
+          </div>
+        </div>
+        <div id="auth-status" class="muted" style="margin-bottom:10px;"></div>
+        <div class="form-row two">
+          <div>
+            <label for="pin">Admin PIN</label>
+            <input id="pin" type="text" placeholder="Enter PIN" />
+          </div>
+          <div>
+            <label for="new-pin">Set/Initialize PIN</label>
+            <input id="new-pin" type="text" placeholder="Only if not set" />
+          </div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; margin-top: 12px;">
+          <div class="btn primary" id="btn-login">Login</div>
+          <div class="btn" id="btn-init">Initialize Admin</div>
+        </div>
+      </section>
+
+      <section class="card form">
+        <div class="section-header" style="margin:0 0 10px;">
+          <div>
+            <h2 style="font-size:16px;">Note</h2>
+            <p>Local-only storage.</p>
+          </div>
+        </div>
+        <div class="help">
+          Admin edits and public site share the same localStorage keys on the same deployed GitHub Pages site.
+          If you open the site from different URLs/domains, the browser storage will be different.
+        </div>
+      </section>
+    </div>
+  </main>
 
   <script>
     const STORAGE_KEYS = {
       songs: 'bcm_songs_v1',
       announcements: 'bcm_announcements_v1',
       updates: 'bcm_updates_v1',
-      worship: 'bcm_worship_v1'
+      worship: 'bcm_worship_v1',
+      adminPinHash: 'bcm_admin_pin_hash_v1',
+      adminAuthed: 'bcm_admin_authed_v1'
     };
 
     const $ = (sel) => document.querySelector(sel);
     const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
-    const state = {
-      songs: [],
-      announcements: [],
-      updates: [],
-      worship: [],
-      slide: {
-        open: false,
-        songId: null,
-        slideIndex: 0,
-        slides: [],
-        linesPerSlide: 5,
-        showChords: false,
-      }
-    };
+    const state = { songs: [], announcements: [], updates: [], worship: [] };
 
+    const safeText = (s) => (s ?? '').toString();
     const nowISO = () => new Date().toISOString();
     const uid = () => Math.random().toString(16).slice(2) + '-' + Date.now().toString(16);
-    const safeText = (s) => (s ?? '').toString();
-
-    function persist(){
-      localStorage.setItem(STORAGE_KEYS.songs, JSON.stringify(state.songs));
-      localStorage.setItem(STORAGE_KEYS.announcements, JSON.stringify(state.announcements));
-      localStorage.setItem(STORAGE_KEYS.updates, JSON.stringify(state.updates));
-      localStorage.setItem(STORAGE_KEYS.worship, JSON.stringify(state.worship));
-    }
 
     function escapeHTML(str){
       return safeText(str)
@@ -752,125 +481,22 @@
         .replaceAll("'",'&#039;');
     }
 
-    function load(){
-      try{
-        state.songs = JSON.parse(localStorage.getItem(STORAGE_KEYS.songs) || '[]');
-        state.announcements = JSON.parse(localStorage.getItem(STORAGE_KEYS.announcements) || '[]');
-        state.updates = JSON.parse(localStorage.getItem(STORAGE_KEYS.updates) || '[]');
-        state.worship = JSON.parse(localStorage.getItem(STORAGE_KEYS.worship) || '[]');
-      }catch{
-        state.songs=[]; state.announcements=[]; state.updates=[]; state.worship=[];
-      }
-
-      // Seed songs (only if empty)
-      if(state.songs.length === 0){
-        state.songs = [
-          {
-            id: uid(),
-            title: 'Blessed Assurance',
-            category: 'Hymn',
-            artist: 'Fanny J. Crosby',
-            lyrics:
-`Blessed assurance, Jesus is mine
-O what a foretaste of glory divine
-
-Heir of salvation, purchase of God
-Born of His Spirit, washed in His blood
-
-This is my story, this is my song
-Praising my Savior all the day long`,
-            chords: '',
-            createdAt: nowISO(),
-            updatedAt: nowISO()
-          },
-          {
-            id: uid(),
-            title: 'Great Is Thy Faithfulness',
-            category: 'Worship',
-            artist: 'Thomas Chisholm',
-            lyrics:
-`Great is Thy faithfulness, O God my Father
-There is no shadow of turning with Thee
-
-Thou changest not, Thy compassions they fail not
-As Thou hast been, Thou forever wilt be
-
-Great is Thy faithfulness! Great is Thy faithfulness!
-Morning by morning new mercies I see
-All I have needed Thy hand hath provided
-Great is Thy faithfulness, Lord, unto me`,
-            chords: '',
-            createdAt: nowISO(),
-            updatedAt: nowISO()
-          },
-          {
-            id: uid(),
-            title: 'Praise and Tribes',
-            category: 'Worship',
-            artist: 'Praise & Tribes',
-            lyrics:
-`You are worthy of all praise
-We lift our voices to You
-
-With grateful hearts we worship
-You reign forevermore
-
-Hallelujah! Hallelujah!
-Amen, amen, amen`,
-            chords: '',
-            createdAt: nowISO(),
-            updatedAt: nowISO()
-          }
-        ];
-      }
-
-      if(state.announcements.length === 0){
-        state.announcements = [
-          {
-            id: uid(),
-            title: 'Sunday Service',
-            date: '2026-07-21',
-            priority: 'high',
-            body: 'Join us for worship, prayer, and the Word. Please arrive 15 minutes early.',
-            createdAt: nowISO(),
-            updatedAt: nowISO()
-          }
-        ];
-      }
-
-      if(state.updates.length === 0){
-        state.updates = [
-          {
-            id: uid(),
-            title: 'Weekly Update',
-            date: '2026-07-19',
-            topic: 'Teaching',
-            body: 'This week’s focus: God’s faithfulness. Come and be encouraged through Scripture and worship.',
-            createdAt: nowISO(),
-            updatedAt: nowISO()
-          }
-        ];
-      }
-
-      persist();
+    function isPinInitialized(){
+      return !!localStorage.getItem(STORAGE_KEYS.adminPinHash);
+    }
+    function isAuthed(){
+      return localStorage.getItem(STORAGE_KEYS.adminAuthed) === '1';
+    }
+    function setAuthed(val){
+      localStorage.setItem(STORAGE_KEYS.adminAuthed, val ? '1' : '0');
+      $('#authed').style.display = val ? '' : 'none';
+      $('#login').style.display = val ? 'none' : '';
     }
 
-    function setView(view){
-      $$('.chip[data-view]').forEach(el => el.classList.toggle('active', el.dataset.view === view));
-      $$('.view').forEach(el => el.style.display = 'none');
-      $('#view-' + view).style.display = '';
-      if(view === 'home') renderHome();
-      if(view === 'songs') refreshSongsUI();
-      if(view === 'worship') refreshWorshipUI();
-      if(view === 'announcements') refreshAnnouncementsUI();
-      if(view === 'updates') refreshUpdatesUI();
-    }
-
-    function updateKPIs(){
-      $('#kpi-song-count').textContent = state.songs.length;
-      $('#kpi-ann-count').textContent = state.announcements.length;
-      $('#kpi-upd-count').textContent = state.updates.length;
-      $('#kpi-worship-count').textContent = state.worship.length;
+    async function sha256Hex(str){
+      const buf = new TextEncoder().encode(str);
+      const hash = await crypto.subtle.digest('SHA-256', buf);
+      return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
     }
 
     function truncatePreview(text, max=120){
@@ -879,88 +505,128 @@ Amen, amen, amen`,
       return t.slice(0, max-1) + '…';
     }
 
-    function renderHome(){
-      updateKPIs();
-
-      const recentAnn = [...state.announcements].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).slice(0,3);
-      const recentUpd = [...state.updates].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).slice(0,3);
-
-      const annWrap = $('#recent-announcements');
-      annWrap.innerHTML='';
-      if(recentAnn.length === 0){
-        annWrap.innerHTML = '<div class="small-text">No announcements yet.</div>';
-      }else{
-        recentAnn.forEach(a=>{
-          const el = document.createElement('div');
-          el.className='item';
-          const priorityBadge = (a.priority||'normal')==='high' ? '<b style="color:var(--bad);">HIGH</b>' : '<b style="color:var(--warn);">NORMAL</b>';
-          el.innerHTML = `
-            <div class="meta">
-              <div class="name">${escapeHTML(a.title)}</div>
-              <div class="sub">${escapeHTML(a.date || '—')} • ${priorityBadge}</div>
-              <div class="sub">${escapeHTML(truncatePreview(a.body, 140))}</div>
-            </div>
-            <div class="actions">
-              <div class="mini-btn" data-go-ann="1" data-ann-id="${a.id}">Open</div>
-            </div>
-          `;
-          annWrap.appendChild(el);
-        });
-      }
-
-      const updWrap = $('#recent-updates');
-      updWrap.innerHTML='';
-      if(recentUpd.length === 0){
-        updWrap.innerHTML = '<div class="small-text">No updates yet.</div>';
-      }else{
-        recentUpd.forEach(u=>{
-          const el = document.createElement('div');
-          el.className='item';
-          el.innerHTML = `
-            <div class="meta">
-              <div class="name">${escapeHTML(u.title)}</div>
-              <div class="sub">${escapeHTML(u.date || '—')} • ${escapeHTML(u.topic || 'General')}</div>
-              <div class="sub">${escapeHTML(truncatePreview(u.body, 140))}</div>
-            </div>
-            <div class="actions">
-              <div class="mini-btn" data-go-upd="1" data-upd-id="${u.id}">Open</div>
-            </div>
-          `;
-          updWrap.appendChild(el);
-        });
-      }
-
-      $$('[data-go-ann]').forEach(b=>b.addEventListener('click', ()=>setView('announcements')));
-      $$('[data-go-upd]').forEach(b=>b.addEventListener('click', ()=>setView('updates')));
+    function persist(){
+      localStorage.setItem(STORAGE_KEYS.songs, JSON.stringify(state.songs));
+      localStorage.setItem(STORAGE_KEYS.announcements, JSON.stringify(state.announcements));
+      localStorage.setItem(STORAGE_KEYS.updates, JSON.stringify(state.updates));
+      localStorage.setItem(STORAGE_KEYS.worship, JSON.stringify(state.worship));
     }
 
-    function refreshSongsUI(){
-      updateKPIs();
-
-      const search = ($('#song-search')?.value || '').toLowerCase();
-      const filter = ($('#song-filter')?.value || 'all');
-
-      const cats = Array.from(new Set(state.songs.map(s=>safeText(s.category).trim()).filter(Boolean))).sort((a,b)=>a.localeCompare(b));
-      const sel = $('#song-filter');
-      if(sel){
-        const current = sel.value;
-        sel.innerHTML = '<option value="all">All categories</option>' + cats.map(c=>`<option value="${escapeHTML(c)}">${escapeHTML(c)}</option>`).join('');
-        if(cats.includes(current)) sel.value = current;
+    function seedIfEmpty(){
+      if(state.songs.length === 0){
+        state.songs = [
+          { id: uid(), title:'Blessed Assurance', category:'Hymn', artist:'Fanny J. Crosby', chords:'', lyrics:`Blessed assurance, Jesus is mine\nO what a foretaste of glory divine\n\nHeir of salvation, purchase of God\nBorn of His Spirit, washed in His blood\n\nThis is my story, this is my song\nPraising my Savior all the day long`, createdAt: nowISO(), updatedAt: nowISO() },
+          { id: uid(), title:'Great Is Thy Faithfulness', category:'Worship', artist:'Thomas Chisholm', chords:'', lyrics:`Great is Thy faithfulness, O God my Father\nThere is no shadow of turning with Thee\n\nThou changest not, Thy compassions they fail not\nAs Thou hast been, Thou forever wilt be\n\nGreat is Thy faithfulness! Great is Thy faithfulness!\nMorning by morning new mercies I see\nAll I have needed Thy hand hath provided\nGreat is Thy faithfulness, Lord, unto me`, createdAt: nowISO(), updatedAt: nowISO() },
+          { id: uid(), title:'Praise and Tribes', category:'Worship', artist:'Praise & Tribes', chords:'', lyrics:`You are worthy of all praise\nWe lift our voices to You\n\nWith grateful hearts we worship\nYou reign forevermore\n\nHallelujah! Hallelujah!\nAmen, amen, amen`, createdAt: nowISO(), updatedAt: nowISO() }
+        ];
       }
 
-      let songs = [...state.songs];
-      if(filter !== 'all') songs = songs.filter(s => safeText(s.category).trim() === filter);
-      if(search){
-        songs = songs.filter(s => safeText(s.title).toLowerCase().includes(search) || safeText(s.category).toLowerCase().includes(search));
+      if(state.announcements.length === 0){
+        state.announcements = [
+          { id: uid(), title:'Sunday Service', date:'2026-07-21', priority:'high', body:'Join us for worship, prayer, and the Word. Please arrive 15 minutes early.', createdAt: nowISO(), updatedAt: nowISO() }
+        ];
       }
-      songs.sort((a,b)=>a.title.localeCompare(b.title));
 
+      if(state.updates.length === 0){
+        state.updates = [
+          { id: uid(), title:'Weekly Update', date:'2026-07-19', topic:'Teaching', body:"This week’s focus: God’s faithfulness. Come and be encouraged through Scripture and worship.", createdAt: nowISO(), updatedAt: nowISO() }
+        ];
+      }
+    }
+
+    function loadContent(){
+      try{
+        state.songs = JSON.parse(localStorage.getItem(STORAGE_KEYS.songs) || '[]');
+        state.announcements = JSON.parse(localStorage.getItem(STORAGE_KEYS.announcements) || '[]');
+        state.updates = JSON.parse(localStorage.getItem(STORAGE_KEYS.updates) || '[]');
+        state.worship = JSON.parse(localStorage.getItem(STORAGE_KEYS.worship) || '[]');
+      }catch{
+        state.songs=[]; state.announcements=[]; state.updates=[]; state.worship=[];
+      }
+      seedIfEmpty();
+      persist();
+    }
+
+    async function tryLogin(){
+      const pin = safeText($('#pin').value).trim();
+      if(!pin){ alert('Enter your PIN.'); return; }
+      if(!isPinInitialized()){ alert('Admin PIN is not initialized yet. Use Initialize Admin.'); return; }
+      const stored = localStorage.getItem(STORAGE_KEYS.adminPinHash);
+      const hash = await sha256Hex(pin);
+      if(hash === stored){
+        setAuthed(true);
+        $('#auth-status').textContent = 'Authenticated.';
+        $('#pin').value='';
+        renderAll();
+        switchTab('songs');
+      }else{
+        alert('Wrong PIN.');
+      }
+    }
+
+    async function initPin(){
+      const newPin = safeText($('#new-pin').value).trim();
+      if(!newPin){ alert('Enter a new PIN first.'); return; }
+      if(isPinInitialized()){
+        if(!confirm('Admin PIN already initialized. Re-initialize with the new PIN?')) return;
+      }
+      const hash = await sha256Hex(newPin);
+      localStorage.setItem(STORAGE_KEYS.adminPinHash, hash);
+      setAuthed(true);
+      $('#auth-status').textContent = 'PIN initialized + authenticated.';
+      $('#new-pin').value='';
+      loadContent();
+      renderAll();
+      switchTab('songs');
+    }
+
+    function clearSongForm(){
+      $('#song-title').value='';
+      $('#song-category').value='';
+      $('#song-lyrics').value='';
+      $('#song-chords').value='';
+      $('#song-artist').value='';
+      $('#song-edit-id').value='';
+    }
+
+    function fillSongForm(s){
+      $('#song-title').value = safeText(s.title);
+      $('#song-category').value = safeText(s.category);
+      $('#song-lyrics').value = safeText(s.lyrics);
+      $('#song-chords').value = safeText(s.chords||'');
+      $('#song-artist').value = safeText(s.artist||'');
+      $('#song-edit-id').value = safeText(s.id);
+    }
+
+    function saveSong(){
+      const title = safeText($('#song-title').value).trim();
+      const category = safeText($('#song-category').value).trim();
+      const lyrics = safeText($('#song-lyrics').value).trimEnd();
+      const chords = safeText($('#song-chords').value).trimEnd();
+      const artist = safeText($('#song-artist').value).trim();
+      if(!title){ alert('Song title is required.'); return; }
+      if(!lyrics || lyrics.trim().length < 3){ alert('Lyrics are required.'); return; }
+
+      const editId = safeText($('#song-edit-id').value).trim();
+      if(editId){
+        const idx = state.songs.findIndex(x=>x.id===editId);
+        if(idx>=0){
+          state.songs[idx] = { ...state.songs[idx], title, category, lyrics, chords, artist, updatedAt: nowISO() };
+        }
+      }else{
+        state.songs.push({ id: uid(), title, category, lyrics, chords, artist, createdAt: nowISO(), updatedAt: nowISO() });
+      }
+      persist();
+      renderAll();
+      clearSongForm();
+      switchTab('songs');
+    }
+
+    function refreshSongs(){
       const wrap = $('#songs-list');
       wrap.innerHTML='';
-      if(!songs.length){
-        wrap.innerHTML = '<div class="small-text">No songs found.</div>';
-        return;
-      }
+      const songs = [...state.songs].sort((a,b)=>a.title.localeCompare(b.title));
+      if(!songs.length){ wrap.innerHTML = '<div class="small-text">No songs.</div>'; return; }
 
       songs.forEach(s=>{
         const el = document.createElement('div');
@@ -968,205 +634,128 @@ Amen, amen, amen`,
         el.innerHTML = `
           <div class="meta">
             <div class="name">${escapeHTML(s.title)}</div>
-            <div class="sub">${escapeHTML(s.category || '—')} • ${escapeHTML(s.artist || '—')}</div>
-            <div class="sub">${escapeHTML(truncatePreview(s.lyrics, 120))}</div>
+            <div class="sub">${escapeHTML(s.category||'—')} • ${escapeHTML(s.artist||'—')}</div>
+            <div class="sub">${escapeHTML(truncatePreview(s.lyrics, 150))}</div>
           </div>
           <div class="actions">
-            <div class="mini-btn" data-slide="${s.id}">Slide Mode</div>
+            <div class="mini-btn" data-edit-song="${escapeHTML(s.id)}">Edit</div>
+            <div class="mini-btn danger" data-del-song="${escapeHTML(s.id)}">Delete</div>
           </div>
         `;
         wrap.appendChild(el);
 
-        el.querySelector('[data-slide]').addEventListener('click', ()=>openSlideForSong(s.id));
+        el.querySelector('[data-edit-song]').addEventListener('click', ()=>fillSongForm(s));
+        el.querySelector('[data-del-song]').addEventListener('click', ()=>{
+          if(!confirm(`Delete song: ${s.title}?`)) return;
+          state.songs = state.songs.filter(x=>x.id!==s.id);
+          state.worship = state.worship.filter(w=>w.songId!==s.id);
+          persist();
+          renderAll();
+          clearSongForm();
+        });
       });
     }
 
-    function splitLyricsIntoSlides(lyrics, linesPerSlide){
-      const lines = safeText(lyrics).replaceAll('\r\n','\n').replaceAll('\r','\n').split('\n');
-      const groups = [];
-      for(let i=0; i<lines.length; i += linesPerSlide){
-        groups.push(lines.slice(i, i + linesPerSlide).join('\n').trimEnd());
-      }
-      return groups.filter(g => g.trim().length > 0);
-    }
-
-    function openSlideForSong(songId){
-      const song = state.songs.find(s=>s.id===songId);
-      if(!song) return;
-
-      state.slide.songId = song.id;
-      state.slide.slideIndex = 0;
-
-      state.slide.linesPerSlide = parseInt($('#slide-lines').value || '5', 10);
-      state.slide.showChords = !!$('#slide-show-chords').checked;
-
-      state.slide.slides = splitLyricsIntoSlides(song.lyrics, Math.max(2, Math.min(12, state.slide.linesPerSlide)));
-      renderSlide();
-
-      $('#slide-overlay').classList.add('open');
-      state.slide.open = true;
-    }
-
-    function renderSlide(){
-      const song = state.songs.find(s=>s.id===state.slide.songId);
-      if(!song) return;
-
-      const total = Math.max(1, state.slide.slides.length);
-      const idx = Math.max(0, Math.min(state.slide.slideIndex, total-1));
-      state.slide.slideIndex = idx;
-
-      const slideText = state.slide.slides[idx] || '';
-      $('#slide-lyrics').textContent = slideText;
-      $('#slide-song-title').textContent = song.title;
-      $('#slide-song-sub').textContent = `Slide ${idx+1} of ${total}`;
-      $('#slide-progress').textContent = `Use Prev/Next • Projector-friendly • ${song.category || 'Song'}`;
-
-      const chordsEl = $('#slide-chords');
-      if(state.slide.showChords && safeText(song.chords).trim().length){
-        chordsEl.textContent = safeText(song.chords).trim();
-        chordsEl.classList.add('show');
-      }else{
-        chordsEl.textContent='';
-        chordsEl.classList.remove('show');
-      }
-
-      $('#slide-lines').value = state.slide.linesPerSlide;
-      $('#slide-show-chords').checked = state.slide.showChords;
-    }
-
-    function closeSlide(){
-      $('#slide-overlay').classList.remove('open');
-      state.slide.open=false;
-      if(document.fullscreenElement){ document.exitFullscreen().catch(()=>{}); }
-    }
-
-    function goSlide(delta){
-      const total = state.slide.slides.length || 1;
-      state.slide.slideIndex = Math.max(0, Math.min(total-1, state.slide.slideIndex + delta));
-      renderSlide();
-    }
-
-    async function toggleFullscreen(){
-      const dlg = $('#slide-overlay');
-      if(!document.fullscreenElement){
-        await dlg.requestFullscreen().catch(()=>{});
-      }else{
-        await document.exitFullscreen().catch(()=>{});
-      }
-      renderSlide();
-    }
-
-    function wireSlideOverlay(){
-      $('#slide-close').addEventListener('click', closeSlide);
-      $('#slide-prev').addEventListener('click', ()=>goSlide(-1));
-      $('#slide-next').addEventListener('click', ()=>goSlide(1));
-      $('#slide-fullscreen').addEventListener('click', toggleFullscreen);
-
-      $('#slide-apply').addEventListener('click', ()=>{
-        state.slide.linesPerSlide = parseInt($('#slide-lines').value || '5', 10);
-        state.slide.showChords = !!$('#slide-show-chords').checked;
-        const song = state.songs.find(s=>s.id===state.slide.songId);
-        if(song){
-          state.slide.slides = splitLyricsIntoSlides(song.lyrics, Math.max(2, Math.min(12, state.slide.linesPerSlide)));
-          state.slide.slideIndex = 0;
-          renderSlide();
-        }
-      });
-
-      $('#slide-copy').addEventListener('click', async ()=>{
-        try{
-          await navigator.clipboard.writeText($('#slide-lyrics').textContent.trim());
-          $('#slide-copy').textContent = 'Copied!';
-          setTimeout(()=> $('#slide-copy').textContent = 'Copy Lyrics (Current)', 900);
-        }catch{
-          alert('Copy failed. Clipboard may be blocked by your browser.');
-        }
-      });
-
-      $('#slide-overlay').addEventListener('click', (e)=>{ if(e.target === $('#slide-overlay')) closeSlide(); });
-
-      window.addEventListener('keydown', (e)=>{
-        if(!state.slide.open) return;
-        if(e.key === 'Escape') closeSlide();
-        if(e.key === 'ArrowLeft') goSlide(-1);
-        if(e.key === 'ArrowRight') goSlide(1);
-        if(e.key === 'f' || e.key === 'F') toggleFullscreen();
-      });
-    }
-
-    function refreshWorshipUI(){
-      updateKPIs();
+    function refreshWorship(){
       const wrap = $('#worship-list');
       wrap.innerHTML='';
+      const wrapSel = $('#worship-song-select');
+      const songsSorted = [...state.songs].sort((a,b)=>a.title.localeCompare(b.title));
+      const current = wrapSel?.value || '';
+      wrapSel.innerHTML = songsSorted.map(s=>`<option value="${escapeHTML(s.id)}">${escapeHTML(s.title)}</option>`).join('');
+      if(current && state.songs.some(s=>s.id===current)) wrapSel.value = current;
 
-      const ordered = [...state.worship].sort((a,b)=>a.order - b.order);
-      if(!ordered.length){
-        wrap.innerHTML = '<div class="small-text">Your worship set is empty. Edit it from Admin.</div>';
-        return;
-      }
+      const ordered = [...state.worship].sort((a,b)=>a.order-b.order);
+      if(!ordered.length){ wrap.innerHTML = '<div class="small-text">Worship set is empty.</div>'; return; }
 
       ordered.forEach(w=>{
         const song = state.songs.find(s=>s.id===w.songId);
-        const title = song ? song.title : 'Missing song';
         const el = document.createElement('div');
         el.className='item';
         el.innerHTML = `
           <div class="meta">
-            <div class="name">#${w.order} • ${escapeHTML(title)}</div>
-            <div class="sub">${escapeHTML(w.notes || '')}</div>
+            <div class="name">#${w.order} • ${escapeHTML(song? song.title : 'Missing song')}</div>
+            <div class="sub">${escapeHTML(w.notes||'')}</div>
           </div>
           <div class="actions">
-            <div class="mini-btn" data-worship-slide="${w.songId}">Slide Mode</div>
+            <div class="mini-btn danger" data-del-worship="${escapeHTML(w.id)}">Remove</div>
           </div>
         `;
         wrap.appendChild(el);
-        el.querySelector('[data-worship-slide]').addEventListener('click', ()=>openSlideForSong(w.songId));
+        el.querySelector('[data-del-worship]').addEventListener('click', ()=>{
+          if(!confirm(`Remove #${w.order} from worship set?`)) return;
+          state.worship = state.worship.filter(x=>x.id!==w.id);
+          persist();
+          renderAll();
+        });
       });
     }
 
-    function addWorshipItem(){
-      const songId = $('#worship-song-select')?.value;
-      const notes = $('#worship-notes')?.value;
-      if(!songId) return;
-      const nextOrder = (state.worship.reduce((m,x)=>Math.max(m,x.order),0) || 0) + 1;
-      state.worship.push({ id: uid(), songId, order: nextOrder, notes: notes ? notes : '' });
+    function addWorship(){
+      const songId = $('#worship-song-select').value;
+      if(!songId){ alert('Select a song.'); return; }
+      if(!state.songs.some(s=>s.id===songId)){ alert('Song not found.'); return; }
+      const notes = safeText($('#worship-notes').value).trim();
+      const posRaw = safeText($('#worship-position').value).trim();
+      const nextOrder = (state.worship.reduce((m,x)=>Math.max(m,x.order),0)||0) + 1;
+      const order = posRaw ? Math.max(1, parseInt(posRaw,10)) : nextOrder;
+      state.worship.push({ id: uid(), songId, order, notes });
       persist();
-      refreshWorshipUI();
-      updateKPIs();
+      $('#worship-notes').value='';
+      $('#worship-position').value='';
+      renderAll();
     }
 
-    function startWorshipSlides(){
-      const ordered = state.worship.slice().sort((a,b)=>a.order-b.order);
-      if(!ordered.length) return alert('Worship set is empty.');
-      openSlideForSong(ordered[0].songId);
+    function clearWorship(){
+      if(!confirm('Clear the entire worship set?')) return;
+      state.worship=[];
+      persist();
+      renderAll();
     }
 
-    function refreshAnnouncementsUI(){
-      updateKPIs();
+    function fillAnnForm(a){
+      $('#ann-title').value = safeText(a.title);
+      $('#ann-date').value = safeText(a.date);
+      $('#ann-body').value = safeText(a.body);
+      $('#ann-priority').value = safeText(a.priority||'normal');
+      $('#ann-edit-id').value = safeText(a.id);
+    }
 
-      const search = ($('#ann-search')?.value || '').toLowerCase();
-      const sort = $('#ann-sort')?.value || 'newest';
+    function clearAnnForm(){
+      $('#ann-title').value='';
+      $('#ann-date').value='';
+      $('#ann-body').value='';
+      $('#ann-priority').value='normal';
+      $('#ann-edit-id').value='';
+    }
 
-      let items = [...state.announcements];
-      if(search){
-        items = items.filter(a=>safeText(a.title).toLowerCase().includes(search) || safeText(a.body).toLowerCase().includes(search));
-      }
+    function saveAnnouncement(){
+      const title = safeText($('#ann-title').value).trim();
+      const date = safeText($('#ann-date').value).trim();
+      const body = safeText($('#ann-body').value).trimEnd();
+      const priority = $('#ann-priority').value;
+      if(!title){ alert('Announcement title is required.'); return; }
+      if(!body || body.trim().length < 3){ alert('Announcement details are required.'); return; }
 
-      items.sort((a,b)=>{
-        if(sort==='newest') return new Date(b.createdAt)-new Date(a.createdAt);
-        if(sort==='oldest') return new Date(a.createdAt)-new Date(b.createdAt);
-        if(sort==='priority'){
-          const pa = (safeText(a.priority||'normal')==='high') ? 1:0;
-          const pb = (safeText(b.priority||'normal')==='high') ? 1:0;
-          if(pb!==pa) return pb-pa;
-          return new Date(b.createdAt)-new Date(a.createdAt);
+      const editId = safeText($('#ann-edit-id').value).trim();
+      if(editId){
+        const idx = state.announcements.findIndex(x=>x.id===editId);
+        if(idx>=0){
+          state.announcements[idx] = { ...state.announcements[idx], title, date, body, priority, updatedAt: nowISO() };
         }
-        return 0;
-      });
+      }else{
+        state.announcements.push({ id: uid(), title, date, body, priority, createdAt: nowISO(), updatedAt: nowISO() });
+      }
+      persist();
+      clearAnnForm();
+      renderAll();
+    }
 
+    function refreshAnnouncements(){
       const wrap = $('#ann-list');
       wrap.innerHTML='';
-      if(!items.length){ wrap.innerHTML='<div class="small-text">No announcements yet.</div>'; return; }
+      const items = [...state.announcements].sort((a,b)=> new Date(b.createdAt)-new Date(a.createdAt));
+      if(!items.length){ wrap.innerHTML = '<div class="small-text">No announcements.</div>'; return; }
 
       items.forEach(a=>{
         const priorityBadge = (a.priority||'normal')==='high' ? '<b style="color:var(--bad);">HIGH</b>' : '<b style="color:var(--warn);">NORMAL</b>';
@@ -1175,36 +764,69 @@ Amen, amen, amen`,
         el.innerHTML = `
           <div class="meta">
             <div class="name">${escapeHTML(a.title)}</div>
-            <div class="sub">${escapeHTML(a.date || '—')} • ${priorityBadge}</div>
-            <div class="sub">${escapeHTML(truncatePreview(a.body, 240))}</div>
+            <div class="sub">${escapeHTML(a.date||'—')} • ${priorityBadge}</div>
+            <div class="sub">${escapeHTML(truncatePreview(a.body, 160))}</div>
           </div>
           <div class="actions">
-            <div class="mini-btn" onclick="location.href='/admin/index.html'">Edit</div>
+            <div class="mini-btn" data-edit-ann="${escapeHTML(a.id)}">Edit</div>
+            <div class="mini-btn danger" data-del-ann="${escapeHTML(a.id)}">Delete</div>
           </div>
         `;
         wrap.appendChild(el);
+        el.querySelector('[data-edit-ann]').addEventListener('click', ()=>fillAnnForm(a));
+        el.querySelector('[data-del-ann]').addEventListener('click', ()=>{
+          if(!confirm(`Delete announcement: ${a.title}?`)) return;
+          state.announcements = state.announcements.filter(x=>x.id!==a.id);
+          persist();
+          renderAll();
+          clearAnnForm();
+        });
       });
     }
 
-    function refreshUpdatesUI(){
-      updateKPIs();
+    function fillUpdForm(u){
+      $('#upd-title').value = safeText(u.title);
+      $('#upd-date').value = safeText(u.date);
+      $('#upd-body').value = safeText(u.body);
+      $('#upd-topic').value = safeText(u.topic||'');
+      $('#upd-edit-id').value = safeText(u.id);
+    }
 
-      const search = ($('#upd-search')?.value || '').toLowerCase();
-      const sort = $('#upd-sort')?.value || 'newest';
+    function clearUpdForm(){
+      $('#upd-title').value='';
+      $('#upd-date').value='';
+      $('#upd-body').value='';
+      $('#upd-topic').value='';
+      $('#upd-edit-id').value='';
+    }
 
-      let items = [...state.updates];
-      if(search){
-        items = items.filter(u=>safeText(u.title).toLowerCase().includes(search) || safeText(u.body).toLowerCase().includes(search) || safeText(u.topic||'').toLowerCase().includes(search));
+    function saveUpdate(){
+      const title = safeText($('#upd-title').value).trim();
+      const date = safeText($('#upd-date').value).trim();
+      const topic = safeText($('#upd-topic').value).trim();
+      const body = safeText($('#upd-body').value).trimEnd();
+      if(!title){ alert('Update title is required.'); return; }
+      if(!body || body.trim().length < 3){ alert('Update message is required.'); return; }
+
+      const editId = safeText($('#upd-edit-id').value).trim();
+      if(editId){
+        const idx = state.updates.findIndex(x=>x.id===editId);
+        if(idx>=0){
+          state.updates[idx] = { ...state.updates[idx], title, date, topic, body, updatedAt: nowISO() };
+        }
+      }else{
+        state.updates.push({ id: uid(), title, date, topic, body, createdAt: nowISO(), updatedAt: nowISO() });
       }
+      persist();
+      clearUpdForm();
+      renderAll();
+    }
 
-      items.sort((a,b)=>{
-        if(sort==='oldest') return new Date(a.createdAt)-new Date(b.createdAt);
-        return new Date(b.createdAt)-new Date(a.createdAt);
-      });
-
+    function refreshUpdates(){
       const wrap = $('#upd-list');
       wrap.innerHTML='';
-      if(!items.length){ wrap.innerHTML='<div class="small-text">No updates yet.</div>'; return; }
+      const items = [...state.updates].sort((a,b)=> new Date(b.createdAt)-new Date(a.createdAt));
+      if(!items.length){ wrap.innerHTML = '<div class="small-text">No updates.</div>'; return; }
 
       items.forEach(u=>{
         const el = document.createElement('div');
@@ -1212,49 +834,124 @@ Amen, amen, amen`,
         el.innerHTML = `
           <div class="meta">
             <div class="name">${escapeHTML(u.title)}</div>
-            <div class="sub">${escapeHTML(u.date || '—')} • ${escapeHTML(u.topic || 'General')}</div>
-            <div class="sub">${escapeHTML(truncatePreview(u.body, 240))}</div>
+            <div class="sub">${escapeHTML(u.date||'—')} • ${escapeHTML(u.topic||'General')}</div>
+            <div class="sub">${escapeHTML(truncatePreview(u.body, 160))}</div>
           </div>
           <div class="actions">
-            <div class="mini-btn" onclick="location.href='/admin/index.html'">Edit</div>
+            <div class="mini-btn" data-edit-upd="${escapeHTML(u.id)}">Edit</div>
+            <div class="mini-btn danger" data-del-upd="${escapeHTML(u.id)}">Delete</div>
           </div>
         `;
         wrap.appendChild(el);
+        el.querySelector('[data-edit-upd]').addEventListener('click', ()=>fillUpdForm(u));
+        el.querySelector('[data-del-upd]').addEventListener('click', ()=>{
+          if(!confirm(`Delete update: ${u.title}?`)) return;
+          state.updates = state.updates.filter(x=>x.id!==u.id);
+          persist();
+          renderAll();
+          clearUpdForm();
+        });
       });
     }
 
-    function wireNav(){
-      $$('.chip[data-view]').forEach(chip=> chip.addEventListener('click', ()=> setView(chip.dataset.view)));
-      $$('[data-go]').forEach(el => el.addEventListener('click', ()=> setView(el.dataset.go)));
+    function renderAll(){
+      loadContent();
+      refreshSongs();
+      refreshWorship();
+      refreshAnnouncements();
+      refreshUpdates();
+      updateTabVisibility();
     }
 
-    function wireForms(){
-      $('#btn-worship-start').addEventListener('click', startWorshipSlides);
-
-      const songSearch = $('#song-search');
-      if(songSearch) songSearch.addEventListener('input', refreshSongsUI);
-      const songFilter = $('#song-filter');
-      if(songFilter) songFilter.addEventListener('change', refreshSongsUI);
-
-      const annSearch = $('#ann-search');
-      if(annSearch) annSearch.addEventListener('input', refreshAnnouncementsUI);
-      const annSort = $('#ann-sort');
-      if(annSort) annSort.addEventListener('change', refreshAnnouncementsUI);
-
-      const updSearch = $('#upd-search');
-      if(updSearch) updSearch.addEventListener('input', refreshUpdatesUI);
-      const updSort = $('#upd-sort');
-      if(updSort) updSort.addEventListener('change', refreshUpdatesUI);
+    function switchTab(tab){
+      $$('.chip[data-tab]').forEach(c=>c.classList.toggle('active', c.dataset.tab===tab));
+      $('#tab-songs').style.display = tab==='songs' ? '' : 'none';
+      $('#tab-worship').style.display = tab==='worship' ? '' : 'none';
+      $('#tab-announcements').style.display = tab==='announcements' ? '' : 'none';
+      $('#tab-updates').style.display = tab==='updates' ? '' : 'none';
+      updateTabVisibility();
     }
 
-    function init(){
-      $('#year').textContent = new Date().getFullYear();
-      load();
-      wireNav();
-      wireForms();
-      wireSlideOverlay();
+    function updateTabVisibility(){
+      const tab = $$('.chip[data-tab].active')[0]?.dataset?.tab || 'songs';
+      $('#songs-list').style.display = tab==='songs' ? '' : 'none';
+      $('#worship-list').style.display = tab==='worship' ? '' : 'none';
+      $('#ann-list').style.display = tab==='announcements' ? '' : 'none';
+      $('#upd-list').style.display = tab==='updates' ? '' : 'none';
+    }
 
-      setView('home');
+    function wire(){
+      $('#btn-login').addEventListener('click', ()=>tryLogin());
+      $('#btn-init').addEventListener('click', ()=>initPin());
+
+      $$('.chip[data-tab]').forEach(ch=> ch.addEventListener('click', ()=>switchTab(ch.dataset.tab)));
+
+      $('#btn-save-song').addEventListener('click', saveSong);
+      $('#btn-clear-song').addEventListener('click', clearSongForm);
+
+      $('#btn-worship-add').addEventListener('click', addWorship);
+      $('#btn-worship-clear').addEventListener('click', clearWorship);
+
+      $('#btn-save-ann').addEventListener('click', saveAnnouncement);
+      $('#btn-clear-ann').addEventListener('click', clearAnnForm);
+
+      $('#btn-save-upd').addEventListener('click', saveUpdate);
+      $('#btn-clear-upd').addEventListener('click', clearUpdForm);
+
+      $('#btn-export').addEventListener('click', ()=>{
+        const payload = {
+          songs: state.songs,
+          worship: state.worship,
+          announcements: state.announcements,
+          updates: state.updates,
+          exportedAt: new Date().toISOString()
+        };
+        $('#backup-text').value = JSON.stringify(payload, null, 2);
+      });
+
+      $('#btn-import').addEventListener('click', ()=>{
+        const txt = ($('#backup-text').value||'').trim();
+        if(!txt){ alert('Paste exported JSON first.'); return; }
+        try{
+          const parsed = JSON.parse(txt);
+          state.songs = Array.isArray(parsed.songs) ? parsed.songs : [];
+          state.worship = Array.isArray(parsed.worship) ? parsed.worship : [];
+          state.announcements = Array.isArray(parsed.announcements) ? parsed.announcements : [];
+          state.updates = Array.isArray(parsed.updates) ? parsed.updates : [];
+          persist();
+          renderAll();
+          alert('Import complete.');
+        }catch{
+          alert('Import failed: invalid JSON.');
+        }
+      });
+
+      $('#btn-wipe').addEventListener('click', ()=>{
+        if(!confirm('Wipe songs, announcements, updates, and worship in THIS browser?')) return;
+        localStorage.removeItem(STORAGE_KEYS.songs);
+        localStorage.removeItem(STORAGE_KEYS.announcements);
+        localStorage.removeItem(STORAGE_KEYS.updates);
+        localStorage.removeItem(STORAGE_KEYS.worship);
+        state.songs=[]; state.announcements=[]; state.updates=[]; state.worship=[];
+        persist();
+        renderAll();
+      });
+    }
+
+    async function init(){
+      loadContent();
+      wire();
+
+      $('#auth-status').textContent = isPinInitialized()
+        ? (isAuthed() ? 'Authenticated.' : 'PIN is set. Please login.')
+        : 'PIN is not initialized. Use Initialize Admin.';
+
+      setAuthed(isAuthed());
+
+      if(isAuthed()){
+        renderAll();
+        switchTab('songs');
+      }
     }
 
     init();
